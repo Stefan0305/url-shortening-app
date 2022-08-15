@@ -22,8 +22,13 @@
 
   --fw-regular: 500;
   --fw-bold: 700;
+
+  --fs-default: 18px;
+  --fs-primary-heading: 3rem;
+  --fs-secondary-heading: 2rem;
 }
 
+// CSS RESET //
 // https://piccalil.li/blog/a-modern-css-reset
 
 /* Box sizing rules */
@@ -91,12 +96,85 @@ svg {
   }
 }
 
+// UTILITY CLASSES
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-very_dark_blue);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+  font-weight: var(--fw-bold);
+}
+
+.fc-secondary-heading-white {
+  color: white;
+}
+
+.fc-secondary-heading-dark {
+  color: var(--clr-neutral-very_dark_blue);
+}
+
+.button {
+  background-color: var(--clr-primary-cyan);
+  color: white;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  border: none;
+  border-radius: 100px;
+  padding: 0.5em 2em;
+}
+
+// STYLING
+body {
+  font-size: var(--fs-default);
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-grayish_violet);
+}
+.container {
+  width: min(1110px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.dark-section {
+  background-color: var(--clr-neutral-background_gray);
+}
+
 .submit-link-section {
   background-color: var(--clr-primary-dark_violet);
 }
 
+.cta-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cta-section-background {
   background-color: var(--clr-primary-dark_violet);
+}
+
+.cta-section-content {
+  position: absolute;
+  text-align: center;
+}
+
+.submit-link-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-link-section-content {
+  position: absolute;
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--clr-neutral-very_dark_violet);
 }
 
 /* Extra small devices (phones, 600px and down) */

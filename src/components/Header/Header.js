@@ -7,7 +7,7 @@ function Header() {
             <div className="container">
                 <nav className="header-navbar">
                     <Logo />
-                    <ul className="header-nav-list">
+                    <ul className="header-nav-list" role="list">
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Pricing</a></li>
                         <li><a href="#">Resources</a></li>
@@ -15,7 +15,7 @@ function Header() {
                 </nav>
                 <div className="login-div">
                     <button className="login-btn">Login</button>
-                    <button className="signup-btn">Sign Up</button>
+                    <button className="button signup-btn">Sign Up</button>
                 </div>
             </div>
         </header>

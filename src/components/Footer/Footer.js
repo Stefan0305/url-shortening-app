@@ -14,7 +14,7 @@ function Footer() {
                 </div>
                 <div className="footer-nav-menu">
                     <div className="footer-nav-menu-card">
-                        <ul className="footer-nav-menu-list">
+                        <ul className="footer-nav-menu-list" role="list">
                             <li>Features</li>
                             <li>Link Shortening</li>
                             <li>Branded Links</li>
@@ -22,7 +22,7 @@ function Footer() {
                         </ul>
                     </div>
                     <div className="footer-nav-menu-card">
-                        <ul className="footer-nav-menu-list">
+                        <ul className="footer-nav-menu-list" role="list">
                             <li>Resources</li>
                             <li>Blog</li>
                             <li>Developers</li>
@@ -30,7 +30,7 @@ function Footer() {
                         </ul>
                     </div>
                     <div className="footer-nav-menu-card">
-                        <ul className="footer-nav-menu-list">
+                        <ul className="footer-nav-menu-list" role="list">
                             <li>Company</li>
                             <li>About</li>
                             <li>Our Team</li>
