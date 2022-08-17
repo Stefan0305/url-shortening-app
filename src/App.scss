@@ -132,6 +132,7 @@ body {
   font-family: var(--ff-primary);
   color: var(--clr-neutral-grayish_violet);
 }
+
 .container {
   width: min(1110px, 100% - 3rem);
   margin-inline: auto;
@@ -141,10 +142,56 @@ body {
   background-color: var(--clr-neutral-background_gray);
 }
 
+// submit form section
 .submit-link-section {
   background-color: var(--clr-primary-dark_violet);
 }
 
+.submit-link-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-link-section-content {
+  position: absolute;
+  text-align: center;
+  form {
+    display: flex;
+  }
+}
+
+.submit-btn {
+  border-radius: 0.5rem;
+  flex: 1;
+}
+
+#link-input-field {
+  border: none;
+  border-radius: 0.5rem;
+  flex: 1;
+}
+
+// cards section
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.card-icon {
+  background-color: var(--clr-primary-dark_violet);
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 1000px;
+}
+
+.card-heading {
+  color: var(--clr-neutral-very_dark_blue);
+  font-weight: var(--fw-bold);
+}
+
+// call to action section
 .cta-section {
   position: relative;
   display: flex;
@@ -161,20 +208,20 @@ body {
   text-align: center;
 }
 
-.submit-link-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.submit-link-section-content {
-  position: absolute;
-  text-align: center;
-}
-
+// footer section
 .footer {
   background-color: var(--clr-neutral-very_dark_violet);
+}
+
+.link-reset {
+  text-decoration: none;
+  color: var(--clr-neutral-grayish_violet);
+  font-weight: var(--fw-regular);
+}
+
+.footer-list-heading {
+  color: white;
+  font-weight: var(--fw-bold);
 }
 
 /* Extra small devices (phones, 600px and down) */

@@ -4,6 +4,9 @@ import Footer from '../components/Footer/Footer';
 import BgBoost from '../components/ImageComponents/BgBoost';
 import BgShorten from '../components/ImageComponents/BgShorten';
 import { ReactComponent as IllustrationWorking } from '../images/illustration-working.svg';
+import { ReactComponent as IconBrandRecognition } from '../images/icon-brand-recognition.svg';
+import { ReactComponent as IconDetailedRecords } from '../images/icon-detailed-records.svg';
+import { ReactComponent as IconFullyCustomizable } from '../images/icon-fully-customizable.svg';
 
 
 function Home() {
@@ -53,9 +56,9 @@ function Home() {
                                     <BgShorten width={windowWidth} />
                                 </div>
                                 <div className="submit-link-section-content">
-                                    <form action="" method="post">
+                                    <form action="#" method="post">
                                         <input type="text" name="link-input-field" id="link-input-field" placeholder='Shorten a link here...' />
-                                        <button className='button'>Shorten It!</button>
+                                        <button className='button submit-btn'>Shorten It!</button>
                                     </form>
                                 </div>
                             </div>
@@ -65,23 +68,29 @@ function Home() {
                             </div>
                             <div className="cards-section">
                                 <div className="card">
-                                    <div className="card-icon"></div>
+                                    <div className="card-icon">
+                                        <IconBrandRecognition />
+                                    </div>
                                     <div className="card-body">
-                                        <h3>Brand Recognition</h3>
+                                        <h3 className='card-heading'>Brand Recognition</h3>
                                         <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <div className="card-icon"></div>
+                                    <div className="card-icon">
+                                        <IconDetailedRecords />
+                                    </div>
                                     <div className="card-body">
-                                        <h3>Detailed Records</h3>
+                                        <h3 className='card-heading'>Detailed Records</h3>
                                         <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <div className="card-icon"></div>
+                                    <div className="card-icon">
+                                        <IconFullyCustomizable />
+                                    </div>
                                     <div className="card-body">
-                                        <h3>Fully Customizable</h3>
+                                        <h3 className='card-heading'>Fully Customizable</h3>
                                         <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
                                     </div>
                                 </div>

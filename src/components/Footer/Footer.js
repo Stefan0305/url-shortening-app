@@ -10,32 +10,32 @@ function Footer() {
         <footer className="footer">
             <div className="container">
                 <div className="footer-logo">
-                    <Logo />
+                    <Logo fill="white" />
                 </div>
                 <div className="footer-nav-menu">
                     <div className="footer-nav-menu-card">
                         <ul className="footer-nav-menu-list" role="list">
-                            <li>Features</li>
-                            <li>Link Shortening</li>
-                            <li>Branded Links</li>
-                            <li>Analytics</li>
+                            <li className='footer-list-heading'>Features</li>
+                            <li><a href='#' className='link-reset'>Link Shortening</a></li>
+                            <li><a href='#' className='link-reset'>Branded Links</a></li>
+                            <li><a href='#' className='link-reset'>Analytics</a></li>
                         </ul>
                     </div>
                     <div className="footer-nav-menu-card">
                         <ul className="footer-nav-menu-list" role="list">
-                            <li>Resources</li>
-                            <li>Blog</li>
-                            <li>Developers</li>
-                            <li>Support</li>
+                            <li className='footer-list-heading'>Resources</li>
+                            <li><a href='#' className='link-reset'>Blog</a></li>
+                            <li><a href='#' className='link-reset'>Developers</a></li>
+                            <li><a href='#' className='link-reset'>Support</a></li>
                         </ul>
                     </div>
                     <div className="footer-nav-menu-card">
                         <ul className="footer-nav-menu-list" role="list">
-                            <li>Company</li>
-                            <li>About</li>
-                            <li>Our Team</li>
-                            <li>Careers</li>
-                            <li>Contact</li>
+                            <li className='footer-list-heading'>Company</li>
+                            <li><a href='#' className='link-reset'>About</a></li>
+                            <li><a href='#' className='link-reset'>Our Team</a></li>
+                            <li><a href='#' className='link-reset'>Careers</a></li>
+                            <li><a href='#' className='link-reset'>Contact</a></li>
                         </ul>
                     </div>
                 </div>
