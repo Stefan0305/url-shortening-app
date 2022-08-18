@@ -123,7 +123,12 @@ svg {
   font-weight: var(--fw-bold);
   border: none;
   border-radius: 100px;
-  padding: 0.5em 2em;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 // STYLING
@@ -140,6 +145,82 @@ body {
 
 .dark-section {
   background-color: var(--clr-neutral-background_gray);
+}
+
+// header
+.header {
+  display: flex;
+  margin-top: 2rem;
+  font-size: 1rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      margin-top: 10px;
+    }
+  }
+}
+
+.header-nav-list {
+  li > a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  font-weight: var(--fw-bold);
+}
+
+@media (max-width: 991px) {
+  .hamburger-menu {
+    color: var(--clr-neutral-grayish_violet);
+  }
+
+  .close-menu-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--clr-neutral-grayish_violet);
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+  .header-navbar-wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 4rem;
+  }
+  .header-nav-list {
+    display: flex;
+    gap: 2rem;
+    font-weight: var(--fw-bold);
+    height: 3rem;
+    align-items: center;
+    li:hover {
+      color: var(--clr-neutral-very_dark_blue);
+    }
+  }
+  .login-div {
+    display: flex;
+    gap: 2rem;
+  }
+  .login-btn {
+    color: var(--clr-neutral-grayish_violet);
+    cursor: pointer;
+    height: 3rem;
+    &:hover {
+      color: var(--clr-neutral-very_dark_blue);
+    }
+  }
+  .signup-btn {
+    width: 7rem;
+  }
 }
 
 // submit form section
@@ -222,24 +303,4 @@ body {
 .footer-list-heading {
   color: white;
   font-weight: var(--fw-bold);
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

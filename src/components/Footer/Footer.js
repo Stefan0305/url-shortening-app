@@ -10,7 +10,7 @@ function Footer() {
         <footer className="footer">
             <div className="container">
                 <div className="footer-logo">
-                    <Logo fill="white" />
+                    <Logo />
                 </div>
                 <div className="footer-nav-menu">
                     <div className="footer-nav-menu-card">
