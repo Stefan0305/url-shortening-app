@@ -40,10 +40,18 @@ function Footer() {
                     </div>
                 </div>
                 <div className="social-media-links">
-                    <FacebookIcon />
-                    <TwitterIcon />
-                    <PinterestIcon />
-                    <InstagramIcon />
+                    <div>
+                        <FacebookIcon />
+                    </div>
+                    <div>
+                        <TwitterIcon />
+                    </div>
+                    <div>
+                        <PinterestIcon />
+                    </div>
+                    <div>
+                        <InstagramIcon />
+                    </div>
                 </div>
             </div>
         </footer>
