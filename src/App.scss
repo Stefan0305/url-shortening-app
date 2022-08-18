@@ -127,7 +127,7 @@ svg {
   height: 3rem;
   cursor: pointer;
   &:hover {
-    opacity: 0.6;
+    background-color: #75e9e5;
   }
 }
 
@@ -298,9 +298,6 @@ body {
 .submit-link-section-content {
   position: absolute;
   text-align: center;
-  form {
-    // display: flex;
-  }
 }
 
 .submit-btn {
@@ -342,11 +339,15 @@ body {
 
 .cta-section-background {
   background-color: var(--clr-primary-dark_violet);
+  width: 100%;
 }
 
 .cta-section-content {
   position: absolute;
   text-align: center;
+  h2 {
+    margin-bottom: 1rem;
+  }
 }
 
 // footer section

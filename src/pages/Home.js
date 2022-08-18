@@ -109,6 +109,7 @@ function Home() {
                         <div className="cta-section-content">
                             <h2 className='fs-secondary-heading fc-secondary-heading-white'>Boost your links today</h2>
                             <button className='button'>Get Started</button>
+
                         </div>
                     </div>
                 </section>
