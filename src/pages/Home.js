@@ -39,7 +39,7 @@ function Home() {
                     <div className="light-section">
                         <div className="container">
                             <div className="image-section">
-                                <IllustrationWorking />
+                                {/* <IllustrationWorking /> */}
                             </div>
                             <div className="heading-section">
                                 <h1 className='fs-primary-heading'>More than just shorter links</h1>
