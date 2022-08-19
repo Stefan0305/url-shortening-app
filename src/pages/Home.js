@@ -51,17 +51,30 @@ function Home() {
 
                     <div className="dark-section">
                         <div className="container">
+
+                            { /* SUBMIT LINKS SECTION */}
                             <div className="submit-link-section">
                                 <div className="submit-link-section-background">
                                     <BgShorten width={windowWidth} />
                                 </div>
                                 <div className="submit-link-section-content">
                                     <form action="#" method="post">
-                                        <input type="text" name="link-input-field" id="link-input-field" placeholder='Shorten a link here...' />
+                                        <div>
+                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' />
+                                            <p className='error-msg-para'>Please add a link</p>
+                                        </div>
                                         <button className='button submit-btn'>Shorten It!</button>
                                     </form>
                                 </div>
                             </div>
+                            <div className="shortened-links-section">
+                                <div className="shortened-link-div">Shortened Link</div>
+                                <div className="shortened-link-div">Shortened Link</div>
+                                <div className="shortened-link-div">Shortened Link</div>
+                                <div className="shortened-link-div">Shortened Link</div>
+                                <div className="shortened-link-div">Shortened Link</div>
+                            </div>
+
                             <div>
                                 <h2 className='fs-secondary-heading fc-secondary-heading-dark'>Advanced Statistics</h2>
                                 <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
