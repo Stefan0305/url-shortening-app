@@ -29,6 +29,7 @@ function Home() {
         const { innerWidth } = window;
         return innerWidth;
     }
+    const handleChange = event => { }
     return (
         <div>
             <Header />
@@ -58,13 +59,29 @@ function Home() {
                                     <BgShorten width={windowWidth} />
                                 </div>
                                 <div className="submit-link-section-content">
+
                                     <form action="#" method="post">
                                         <div>
                                             <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' />
                                             <p className='error-msg-para'>Please add a link</p>
                                         </div>
                                         <button className='button submit-btn'>Shorten It!</button>
+
+                                   
+                                        {/* method="post" */}
+                                        <input type="url" name="link-input-field" id="link-input-field" placeholder='Shorten a link here...' onChange={handleChange} />
+                                        <button className='button submit-btn' id='btn'> 'Shorten It!</button>
+
                                     </form>
+                                    {/* hidden div displays only when api is called */}
+                                    <div className="results-here" id='result'> 
+
+                                        <div className="result-div">
+                                            <p id="original-url">aaa</p>
+                                            <p id="shorten-url">bbb</p>
+                                            <p class="square btn" id="copy-link">Copy</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="shortened-links-section">
