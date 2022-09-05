@@ -34,7 +34,22 @@ function Home() {
     //link shortening
     const [linkToShorten, setLinkToShorten] = useState()
 
-    const [shortenedLinks, setShortenedLinks] = useState([])
+    const [shortenedLinks, setShortenedLinks] = useState(getSessionStorageOrDefault('ssLinks',[]))
+
+
+    useEffect(() => {
+        sessionStorage.setItem("ssLinks", JSON.stringify(shortenedLinks));
+      }, [shortenedLinks]);
+
+
+
+    function getSessionStorageOrDefault(key, defaultValue) {
+        const stored = sessionStorage.getItem(key);
+        if (!stored) {
+          return defaultValue;
+        }
+        return JSON.parse(stored);
+      }
 
     function getLink(link) {
         fetch("https://api.shrtco.de/v2/shorten?url=" + link)
@@ -47,6 +62,7 @@ function Home() {
       function handleInput(el) {
         setLinkToShorten(el.target.value);
       }
+
       function handleSubmit() {
         if (linkToShorten === "") {
           alert("Vnesi link");
