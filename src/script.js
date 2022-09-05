@@ -4,16 +4,17 @@ let copyBtns = document.querySelectorAll('.copy-link');;
 
 
 //Controls if link is a real url
-function ValidateUrl(link) 
-{
- var urlFormat = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-	if(link.match(urlFormat)) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
+//not needed
+// function ValidateUrl(link) 
+// {
+//  var urlFormat = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+// 	if(link.match(urlFormat)) {
+// 		return true;
+// 	}
+// 	else {
+// 		return false;
+// 	}
+// }
 
 // Creates a new div when the API has been called and stores it to local data - Also allows to copy link to clipboard
 function addLinkDiv(originalURL, shortURL) {
@@ -55,16 +56,19 @@ function copyToClipboard(url, btn) { //url is the shorten url string and btn the
 
 
 
+//function to fetch
+//function adds to localstorage
+//function to update localstorage
 
 // Calling the API
-btn.addEventListener('click', e => {
+btn.addEventListener('click', (e) => {
 	let urlValue = url.value; 
-	if (ValidateUrl(urlValue)) {
-        url.classList.remove('incorrect');
+	// if (ValidateUrl(urlValue)) {
+        // url.classList.remove('incorrect');
         fetch("https://api.shrtco.de/v2/shorten?url=" + urlValue)
-        .then ( response => response.json() )
-        .then (response => {
-            
+        .then ( (response) => response.json() )
+        .then ((data) => {
+            console.log(data)
             if (response.ok) {
                 console.log(response);
                 console.log(response.result.full_short_link);
@@ -80,10 +84,10 @@ btn.addEventListener('click', e => {
         })
         btn.classList.add('waiting');
         btn.innerHTML = "Please wait...";
-	} 
-	else {
-		url.classList.add('incorrect');
-    }
+	//} 
+	// else {
+	// 	url.classList.add('incorrect');
+    // }
 })
 
 

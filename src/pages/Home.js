@@ -7,9 +7,11 @@ import { ReactComponent as IllustrationWorking } from '../images/illustration-wo
 import { ReactComponent as IconBrandRecognition } from '../images/icon-brand-recognition.svg';
 import { ReactComponent as IconDetailedRecords } from '../images/icon-detailed-records.svg';
 import { ReactComponent as IconFullyCustomizable } from '../images/icon-fully-customizable.svg';
+import ShortenedLinkContainer from '../components/ShortenedLinkContainer/ShortenedLinkContainer';
 
 
 function Home() {
+//window resizing
 
     const [windowWidth, setWindowWidth] = useState(getWindowWidth());
 
@@ -29,7 +31,32 @@ function Home() {
         const { innerWidth } = window;
         return innerWidth;
     }
-    const handleChange = event => { }
+    //link shortening
+    const [linkToShorten, setLinkToShorten] = useState()
+
+    const [shortenedLinks, setShortenedLinks] = useState([])
+
+    function getLink(link) {
+        fetch("https://api.shrtco.de/v2/shorten?url=" + link)
+          .then((response) => response.json())
+          .then((data) => {
+            setShortenedLinks((prevLinks) => [...prevLinks, data.result]);
+          });
+      }
+
+      function handleInput(el) {
+        setLinkToShorten(el.target.value);
+      }
+      function handleSubmit() {
+        if (linkToShorten === "") {
+          alert("Vnesi link");
+          return;
+        }
+        getLink(linkToShorten);
+        setLinkToShorten("");
+      }
+
+    const onChange = event => { }
     return (
         <div>
             <Header />
@@ -60,36 +87,26 @@ function Home() {
                                 </div>
                                 <div className="submit-link-section-content">
 
-                                    <form action="#" method="post">
+                                    <div className='form'>
                                         <div>
-                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' />
+                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' value={linkToShorten || ''} onChange={handleInput} />
                                             <p className='error-msg-para'>Please add a link</p>
                                         </div>
-                                        <button className='button submit-btn'>Shorten It!</button>
+                                        <button className='button submit-btn'onClick={handleSubmit}>Shorten It!</button>
 
-                                   
-                                        {/* method="post" */}
-                                        <input type="url" name="link-input-field" id="link-input-field" placeholder='Shorten a link here...' onChange={handleChange} />
-                                        <button className='button submit-btn' id='btn'> 'Shorten It!</button>
 
-                                    </form>
-                                    {/* hidden div displays only when api is called */}
-                                    <div className="results-here" id='result'> 
 
-                                        <div className="result-div">
-                                            <p id="original-url">aaa</p>
-                                            <p id="shorten-url">bbb</p>
-                                            <p class="square btn" id="copy-link">Copy</p>
-                                        </div>
+
                                     </div>
+
+
                                 </div>
                             </div>
+                            {/* add them here */}
                             <div className="shortened-links-section">
-                                <div className="shortened-link-div">Shortened Link</div>
-                                <div className="shortened-link-div">Shortened Link</div>
-                                <div className="shortened-link-div">Shortened Link</div>
-                                <div className="shortened-link-div">Shortened Link</div>
-                                <div className="shortened-link-div">Shortened Link</div>
+                                {shortenedLinks.map((link) => (
+                                    <ShortenedLinkContainer value={link} />
+                                ))}
                             </div>
 
                             <div>

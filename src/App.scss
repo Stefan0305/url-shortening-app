@@ -351,7 +351,7 @@ body {
     }
   }
   .submit-link-section-content {
-    form {
+    .form {
       display: grid;
       grid-template-rows: 1fr 1fr;
       grid-gap: 3rem;
@@ -361,7 +361,7 @@ body {
 }
 @media (min-width: 992px) {
   .submit-link-section-content {
-    form {
+    .form {
       display: grid;
       grid-template-columns: 1fr 20%;
       grid-gap: 3%;
@@ -369,7 +369,37 @@ body {
     }
   }
 }
+//shortened link section
+.dark-section{
+  padding-top: 10rem;
 
+}
+.shortened-links-section{
+  margin-bottom: 4rem;
+}
+.link-wrapper {
+  background-color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  :first-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 2rem;
+  }
+  button {
+    border-radius: 0.5rem;
+  }
+}
+.full-link {
+  color: var(--clr-primary-dark_violet);
+}
+.short-link {
+  color: var(--clr-primary-cyan);
+}
 // cards section
 .card {
   background-color: white;
