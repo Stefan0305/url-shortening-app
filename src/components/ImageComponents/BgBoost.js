@@ -4,7 +4,7 @@ import { ReactComponent as BgBoostMobile } from '../../images/bg-boost-mobile.sv
 function BgBoost(props) {
 
     const width = props.width;
-    console.log(typeof width)
+    
 
     if (width <= 375) {
         return <BgBoostMobile />

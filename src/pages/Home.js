@@ -8,6 +8,7 @@ import { ReactComponent as IconBrandRecognition } from '../images/icon-brand-rec
 import { ReactComponent as IconDetailedRecords } from '../images/icon-detailed-records.svg';
 import { ReactComponent as IconFullyCustomizable } from '../images/icon-fully-customizable.svg';
 import ShortenedLinkContainer from '../components/ShortenedLinkContainer/ShortenedLinkContainer';
+import { useRef } from 'react';
 
 
 function Home() {
@@ -36,6 +37,10 @@ function Home() {
 
     const [shortenedLinks, setShortenedLinks] = useState(getSessionStorageOrDefault('ssLinks',[]))
 
+    const [errorMsg, setErrorMsg] = useState()
+    const errorPara = useRef(null)
+    const inputOutline = useRef(null) 
+
 
     useEffect(() => {
         sessionStorage.setItem("ssLinks", JSON.stringify(shortenedLinks));
@@ -55,6 +60,11 @@ function Home() {
         fetch("https://api.shrtco.de/v2/shorten?url=" + link)
           .then((response) => response.json())
           .then((data) => {
+            if(data.error_code === 2){
+                setErrorMsg('Invalid URL')
+                showError();
+                return 
+            }
             setShortenedLinks((prevLinks) => [...prevLinks, data.result]);
           });
       }
@@ -64,12 +74,22 @@ function Home() {
       }
 
       function handleSubmit() {
-        if (linkToShorten === "") {
-          alert("Vnesi link");
+        if (linkToShorten === "" || linkToShorten === undefined) {
+          setErrorMsg('Please add a link')
+          showError()
           return;
         }
         getLink(linkToShorten);
         setLinkToShorten("");
+      }
+
+      function showError(){
+        errorPara.current.classList.add('active')
+        inputOutline.current.classList.add('active')
+      }
+      function hideError(){
+        errorPara.current.classList.remove('active')
+        inputOutline.current.classList.remove('active')
       }
 
     const onChange = event => { }
@@ -105,8 +125,8 @@ function Home() {
 
                                     <div className='form'>
                                         <div>
-                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' value={linkToShorten || ''} onChange={handleInput} />
-                                            <p className='error-msg-para'>Please add a link</p>
+                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' value={linkToShorten || ''} onChange={handleInput} onFocus={hideError} ref={inputOutline} />
+                                            <p className='error-msg-para' ref={errorPara}>{errorMsg}</p>
                                         </div>
                                         <button className='button submit-btn'onClick={handleSubmit}>Shorten It!</button>
 

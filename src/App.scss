@@ -371,11 +371,11 @@ body {
 }
 //shortened link section
 .dark-section{
-  padding-top: 10rem;
+  padding-top: 8rem;
 
 }
 .shortened-links-section{
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 .link-wrapper {
   background-color: white;
@@ -384,6 +384,7 @@ body {
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;
+  border-radius: 0.3rem;
   :first-child {
     display: flex;
     justify-content: space-between;
@@ -391,8 +392,13 @@ body {
     margin-right: 2rem;
   }
   button {
+    
     border-radius: 0.5rem;
   }
+  button.active{
+    background-color: var(--clr-primary-dark_violet);
+    cursor: default;
+  } 
 }
 .full-link {
   color: var(--clr-primary-dark_violet);

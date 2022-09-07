@@ -4,7 +4,7 @@ import { ReactComponent as BgShortenMobile } from '../../images/bg-shorten-mobil
 function BgShorten(props) {
 
     const width = props.width;
-    console.log(typeof width)
+    
 
     if (width <= 375) {
         return <BgShortenMobile />
