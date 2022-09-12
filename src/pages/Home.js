@@ -7,9 +7,12 @@ import { ReactComponent as IllustrationWorking } from '../images/illustration-wo
 import { ReactComponent as IconBrandRecognition } from '../images/icon-brand-recognition.svg';
 import { ReactComponent as IconDetailedRecords } from '../images/icon-detailed-records.svg';
 import { ReactComponent as IconFullyCustomizable } from '../images/icon-fully-customizable.svg';
+import ShortenedLinkContainer from '../components/ShortenedLinkContainer/ShortenedLinkContainer';
+import { useRef } from 'react';
 
 
 function Home() {
+//window resizing
 
     const [windowWidth, setWindowWidth] = useState(getWindowWidth());
 
@@ -29,6 +32,67 @@ function Home() {
         const { innerWidth } = window;
         return innerWidth;
     }
+    //link shortening
+    const [linkToShorten, setLinkToShorten] = useState()
+
+    const [shortenedLinks, setShortenedLinks] = useState(getSessionStorageOrDefault('ssLinks',[]))
+
+    const [errorMsg, setErrorMsg] = useState()
+    const errorPara = useRef(null)
+    const inputOutline = useRef(null) 
+
+
+    useEffect(() => {
+        sessionStorage.setItem("ssLinks", JSON.stringify(shortenedLinks));
+      }, [shortenedLinks]);
+
+
+
+    function getSessionStorageOrDefault(key, defaultValue) {
+        const stored = sessionStorage.getItem(key);
+        if (!stored) {
+          return defaultValue;
+        }
+        return JSON.parse(stored);
+      }
+
+    function getLink(link) {
+        fetch("https://api.shrtco.de/v2/shorten?url=" + link)
+          .then((response) => response.json())
+          .then((data) => {
+            if(data.error_code === 2){
+                setErrorMsg('Invalid URL')
+                showError();
+                return 
+            }
+            setShortenedLinks((prevLinks) => [...prevLinks, data.result]);
+          });
+      }
+
+      function handleInput(el) {
+        setLinkToShorten(el.target.value);
+      }
+
+      function handleSubmit() {
+        if (linkToShorten === "" || linkToShorten === undefined) {
+          setErrorMsg('Please add a link')
+          showError()
+          return;
+        }
+        getLink(linkToShorten);
+        setLinkToShorten("");
+      }
+
+      function showError(){
+        errorPara.current.classList.add('active')
+        inputOutline.current.classList.add('active')
+      }
+      function hideError(){
+        errorPara.current.classList.remove('active')
+        inputOutline.current.classList.remove('active')
+      }
+
+    const onChange = event => { }
     return (
         <div>
             <Header />
@@ -51,17 +115,36 @@ function Home() {
 
                     <div className="dark-section">
                         <div className="container">
+
+                            { /* SUBMIT LINKS SECTION */}
                             <div className="submit-link-section">
                                 <div className="submit-link-section-background">
                                     <BgShorten width={windowWidth} />
                                 </div>
                                 <div className="submit-link-section-content">
-                                    <form action="#" method="post">
-                                        <input type="text" name="link-input-field" id="link-input-field" placeholder='Shorten a link here...' />
-                                        <button className='button submit-btn'>Shorten It!</button>
-                                    </form>
+
+                                    <div className='form'>
+                                        <div>
+                                            <input type="text" name="link-input-field" className="link-input-field" placeholder='Shorten a link here...' value={linkToShorten || ''} onChange={handleInput} onFocus={hideError} ref={inputOutline} />
+                                            <p className='error-msg-para' ref={errorPara}>{errorMsg}</p>
+                                        </div>
+                                        <button className='button submit-btn'onClick={handleSubmit}>Shorten It!</button>
+
+
+
+
+                                    </div>
+
+
                                 </div>
                             </div>
+                            {/* add them here */}
+                            <div className="shortened-links-section">
+                                {shortenedLinks.map((link) => (
+                                    <ShortenedLinkContainer value={link} />
+                                ))}
+                            </div>
+
                             <div>
                                 <h2 className='fs-secondary-heading fc-secondary-heading-dark'>Advanced Statistics</h2>
                                 <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
