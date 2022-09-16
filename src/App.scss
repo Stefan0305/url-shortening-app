@@ -370,11 +370,10 @@ body {
   }
 }
 //shortened link section
-.dark-section{
+.dark-section {
   padding-top: 8rem;
-
 }
-.shortened-links-section{
+.shortened-links-section {
   margin-bottom: 8rem;
 }
 .link-wrapper {
@@ -392,13 +391,12 @@ body {
     margin-right: 2rem;
   }
   button {
-    
     border-radius: 0.5rem;
   }
-  button.active{
+  button.active {
     background-color: var(--clr-primary-dark_violet);
     cursor: default;
-  } 
+  }
 }
 .full-link {
   color: var(--clr-primary-dark_violet);
@@ -406,6 +404,32 @@ body {
 .short-link {
   color: var(--clr-primary-cyan);
 }
+
+@media (max-width: 991px) {
+  .link-wrapper {
+    flex-direction: column;
+    :first-child {
+      flex-direction: column;
+      margin: auto;
+      p {
+        padding-bottom: 10px;
+        overflow: hidden;
+      }
+      :first-child::after {
+        content: "";
+        height: 2px;
+        width: calc(100% + 4rem);
+        margin-top: 10px;
+        margin-left: -2rem;
+        background-color: var(--clr-neutral-background_gray);
+      }
+    }
+    button {
+      width: 100%;
+    }
+  }
+}
+
 // cards section
 .card {
   background-color: white;
