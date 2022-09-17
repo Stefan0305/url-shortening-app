@@ -144,17 +144,17 @@ function Home() {
                                     <ShortenedLinkContainer value={link} />
                                 ))}
                             </div>
-
+                        <section className='statistics-wrapper'>
                             <div>
                                 <h2 className='fs-secondary-heading fc-secondary-heading-dark'>Advanced Statistics</h2>
                                 <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
-                            </div>
-                            <div className="cards-section">
+                             </div>
+                             <div className="cards-section">
                                 <div className="card">
                                     <div className="card-icon">
                                         <IconBrandRecognition />
                                     </div>
-                                    <div className="card-body">
+                                    <div className="card">
                                         <h3 className='card-heading'>Brand Recognition</h3>
                                         <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
                                     </div>
@@ -163,7 +163,7 @@ function Home() {
                                     <div className="card-icon">
                                         <IconDetailedRecords />
                                     </div>
-                                    <div className="card-body">
+                                    <div className="card">
                                         <h3 className='card-heading'>Detailed Records</h3>
                                         <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
                                     </div>
@@ -172,13 +172,13 @@ function Home() {
                                     <div className="card-icon">
                                         <IconFullyCustomizable />
                                     </div>
-                                    <div className="card-body">
+                                    <div className="card">
                                         <h3 className='card-heading'>Fully Customizable</h3>
                                         <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </section></div>
                     </div>
 
 
