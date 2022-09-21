@@ -126,7 +126,6 @@ svg {
   width: 10rem;
   height: 3rem;
   cursor: pointer;
-
   &:hover {
     background-color: #75e9e5;
   }
@@ -159,7 +158,6 @@ body {
     display: flex;
     justify-content: space-between;
   }
-
   .logo {
     color: var(--clr-neutral-very_dark_blue);
   }
@@ -177,7 +175,6 @@ body {
   border: none;
   font-weight: var(--fw-bold);
 }
-
 .horizontal-divider {
   visibility: hidden;
 }
@@ -188,26 +185,22 @@ body {
       position: relative;
     }
   }
-
   .mobile-nav-toggle {
     background-color: transparent;
     border: none;
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .hamburger-menu {
     color: var(--clr-neutral-grayish_violet);
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .close-menu-icon {
     width: 2.5rem;
     height: 2.5rem;
     color: var(--clr-neutral-grayish_violet);
   }
-
   .header-navbar-wrapper {
     position: absolute;
     top: 4rem;
@@ -220,32 +213,26 @@ body {
     display: none;
     border-radius: 0.5rem;
   }
-
   .header-navbar-wrapper.active {
     display: block;
   }
-
   .login-div {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .login-btn {
     color: white;
     width: min(20rem, 100%);
     min-width: 10rem;
   }
-
   .signup-btn {
     width: min(20rem, 100%);
     min-width: 10rem;
   }
-
   .spacer-links {
     margin-bottom: 2rem;
   }
-
   .horizontal-divider {
     visibility: visible;
     border: 0;
@@ -261,45 +248,37 @@ body {
       margin-top: 10px;
     }
   }
-
   .mobile-nav-toggle {
     display: none;
   }
-
   .header-navbar-wrapper {
     display: inline-flex;
     justify-content: space-between;
     flex-grow: 1;
     margin-left: 4rem;
   }
-
   .header-nav-list {
     display: flex;
     gap: 2rem;
     font-weight: var(--fw-bold);
     height: 3rem;
     align-items: center;
-
     li:hover {
       color: var(--clr-neutral-very_dark_blue);
     }
   }
-
   .login-div {
     display: flex;
     gap: 2rem;
   }
-
   .login-btn {
     color: var(--clr-neutral-grayish_violet);
     cursor: pointer;
     height: 3rem;
-
     &:hover {
       color: var(--clr-neutral-very_dark_blue);
     }
   }
-
   .signup-btn {
     width: 7rem;
   }
@@ -359,7 +338,6 @@ body {
 .dark-section {
   position: relative;
 }
-
 .submit-link-section {
   background-color: var(--clr-primary-dark_violet);
   position: absolute;
@@ -371,12 +349,10 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
 }
-
 .submit-link-section-content {
   position: absolute;
   min-width: 100%;
 }
-
 .link-input-field {
   border: none;
   border-radius: 0.5rem;
@@ -384,16 +360,13 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .link-input-field.active {
   border: 3px solid var(--clr-secondary-red);
-
   &::placeholder {
     color: var(--clr-secondary-red);
     opacity: 0.5;
   }
 }
-
 .error-msg-para {
   margin-top: 0.5rem;
   font-style: italic;
@@ -401,33 +374,27 @@ body {
   visibility: hidden;
   position: absolute;
 }
-
 .error-msg-para.active {
   visibility: visible;
 }
-
 .submit-btn {
   border-radius: 0.5rem;
   width: 100%;
 }
-
 @media (max-width: 991px) {
   .submit-link-section {
     height: 12rem;
     top: -6rem;
   }
-
   .submit-link-section-background {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: right;
-
     :first-child {
       height: 100%;
     }
   }
-
   .submit-link-section-content {
     .form {
       display: grid;
@@ -437,7 +404,6 @@ body {
     }
   }
 }
-
 @media (min-width: 992px) {
   .submit-link-section-content {
     .form {
@@ -448,16 +414,13 @@ body {
     }
   }
 }
-
 //shortened link section
 .dark-section {
   padding: 7rem 0;
 }
-
 .shortened-links-section {
   margin-bottom: 8rem;
 }
-
 .link-wrapper {
   background-color: white;
   margin-bottom: 1rem;
@@ -466,32 +429,52 @@ body {
   padding: 1rem 2rem;
   align-items: center;
   border-radius: 0.3rem;
-
   :first-child {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-right: 2rem;
   }
-
   button {
     border-radius: 0.5rem;
   }
-
   button.active {
     background-color: var(--clr-primary-dark_violet);
     cursor: default;
   }
 }
-
 .full-link {
   color: var(--clr-primary-dark_violet);
 }
-
 .short-link {
   color: var(--clr-primary-cyan);
 }
 
+
+@media (max-width: 991px) {
+  .link-wrapper {
+    flex-direction: column;
+    :first-child {
+      flex-direction: column;
+      margin: auto;
+      p {
+        padding-bottom: 10px;
+        overflow: hidden;
+      }
+      :first-child::after {
+        content: "";
+        height: 2px;
+        width: calc(100% + 4rem);
+        margin-top: 10px;
+        margin-left: -2rem;
+        background-color: var(--clr-neutral-background_gray);
+      }
+    }
+    button {
+      width: 100%;
+    }
+  }
+}
 // Statistics article
 .statistics-wrapper {
   width: 100%;
@@ -502,14 +485,15 @@ body {
     width: 50%;
     text-align: center;
   }
-
   h2 {
     font-size: 2.2em;
     text-align: center;
-    color: #2a2833;
-    margin-bottom: 1rem;
+    color: #2A2833;
   }
 }
+
+
+
 
 .cards-section {
   position: relative;
@@ -633,7 +617,6 @@ body {
 .cta-section-content {
   position: absolute;
   text-align: center;
-
   h2 {
     margin-bottom: 1rem;
   }
@@ -642,37 +625,30 @@ body {
 // footer section
 .footer {
   background-color: var(--clr-neutral-very_dark_violet);
-
   .logo {
     color: white;
   }
 }
-
 .link-reset {
   text-decoration: none;
   color: var(--clr-neutral-grayish_violet);
   font-weight: var(--fw-regular);
 }
-
 .footer-list-heading {
   color: white;
   font-weight: var(--fw-bold);
 }
-
 @media (max-width: 991px) {
   .footer {
     padding: 3rem;
     text-align: center;
-
     .logo {
       margin: auto;
       margin-bottom: 4rem;
     }
   }
-
   .footer-nav-menu-card {
     margin-bottom: 4rem;
-
     .footer-list-heading {
       margin-bottom: 2rem;
     }
@@ -681,7 +657,6 @@ body {
       margin-bottom: 1rem;
     }
   }
-
   .social-media-links {
     display: flex;
     justify-content: space-evenly;
@@ -690,7 +665,6 @@ body {
     margin: 4rem auto;
   }
 }
-
 @media (min-width: 992px) {
   .footer {
     .container {
@@ -699,35 +673,28 @@ body {
       padding: 4rem 0;
     }
   }
-
   .footer-nav-menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-
   .footer-nav-menu-list {
     li {
       padding-bottom: 1rem;
-
       a:hover {
         color: var(--clr-primary-cyan);
       }
     }
-
     .footer-list-heading {
       padding-bottom: 2rem;
     }
   }
-
   .social-media-links {
     display: flex;
     justify-content: space-between;
-
     div:hover {
       :first-child {
         fill: var(--clr-primary-cyan);
       }
-
       cursor: pointer;
     }
   }
