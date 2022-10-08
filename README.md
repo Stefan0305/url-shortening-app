@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shortly
 
-## Available Scripts
+> Shortly is a URL shortening app which can help boost your brand by providing branded, fully customizable short links. You will also gain insight into how are your links performing across the Internet, who and where is engaging with your content which can help you make better decisions.
 
-In the project directory, you can run:
+![screenshot](../shortly/public/page%20screenshot.jpeg)
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- HTML5, CSS, JavaScript
+- React, SCSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+[Live Demo Link](https://fancy-starship-574033.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To get a local copy up and running follow these simple example steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-You need npm to be installed on your machine. For more details about installing npm click here: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm .
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
 
-### `npm run eject`
+-Next you need to clone this repository on your local machine. You can do that by simple
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git clone https://github.com/Stefan0305/url-shortening-app.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-To install the project you need to enter the directory you've cloned. Open a terminal and follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd "REPLACE THIS BY THE DIRECTORY PATH OF THE CLONED PROJECT" (to enter the directory)
+npm install (to install all the necessary modules and dependencies)
 
-## Learn More
+### Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-To run this project locally you just type:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start And the project will be deployed on your machine so you can access it on browser by default on the URL: localhost:3000
 
-### Code Splitting
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Stefan Nikolovski**
 
-### Analyzing the Bundle Size
+- GitHub: [@githubhandle](https://github.com/Stefan0305)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/stefannikolovski/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Denis Stoimenov**
 
-### Making a Progressive Web App
+- GitHub: [@githubhandle](https://github.com/DenisStoimenov)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/denis-stoimenov-98113a232/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Show your support
 
-### Deployment
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
+- https://www.frontendmentor.io/
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
